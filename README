@@ -1,0 +1,41 @@
+### What is this?
+
+This is a library developed to help read the moves from
+a quadratic rotary encoder.
+
+
+### How to use this?
+
+Copy the library directory into "libraries" sub-folder in your sketchbook.
+More info at: http://arduino.cc/en/Reference/Libraries
+
+And you can use something like this on your project.
+
+#include <QuadEncoder.h>
+
+int qe1Move=0;
+QuadEncoder qe(2,4);
+
+void setup() {
+    Serial.begin(9600);
+}
+
+void loop() {
+  qe1Move=qe.hb();
+  if (qe1Move=='>')
+    Serial.print(char(qe1Move));
+  else if (qe1Move=='<')
+    Serial.print(char(qe1Move));
+}
+
+example schematics: http://www.flickr.com/photos/28914418@N02/3755168944/sizes/m/
+
+### License?
+
+It's Public Domain, more at http://en.wikipedia.org/wiki/Public_domain
+I'd ask that you mention my name somewhere on the project but you don't have to.
+
+
+### Who did this?
+
+Pedro Rodrigues (medecau@gmail.com) on January 2010
