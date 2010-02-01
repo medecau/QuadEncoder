@@ -14,17 +14,20 @@ And you can use something like this on your project.
 #include <QuadEncoder.h>
 
 int qe1Move=0;
-QuadEncoder qe(2,4);
+QuadEncoder qe(2,4,3);
 
 void setup() {
     Serial.begin(9600);
 }
 
 void loop() {
-  qe1Move=qe.hb();
-  if (qe1Move=='>')
-    Serial.print(char(qe1Move));
-  else if (qe1Move=='<')
+  qe1Move=qe.readEncoder();
+  //if (qe1Move=='>')
+  //  Serial.print(char(qe1Move));
+  //else if (qe1Move=='<')
+  //  Serial.print(char(qe1Move));
+
+  if(qe.didMove())
     Serial.print(char(qe1Move));
 }
 
@@ -39,3 +42,4 @@ I'd ask that you mention my name somewhere on the project but you don't have to.
 ### Who did this?
 
 Pedro Rodrigues (medecau@gmail.com) on January 2010
+Modified by Andreas Lekas (spadusa@gmail.com) on 31, January 2010
