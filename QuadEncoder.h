@@ -12,12 +12,16 @@
 
 class QuadEncoder
 {
-  public:
-    QuadEncoder(int pin1, int pin2);
-    char hb();
+  public:	//pin 1=A, pin2=B, pin3=Shaft button
+    QuadEncoder(int pin1, int pin2, int pin3);
+    char readEncoder();
+	bool pressed();
+	bool didMove();
   private:
+	bool _moved;
     int _inputPin1;
     int _inputPin2;
+    int _inputPin3;
     int _val1;
     int _val2;
     int _oldVal1;
