@@ -1,5 +1,5 @@
 /**
- * QuadEncoder.cpp - Library for reading moves from a quadratic rotary encoder
+ * QuadEncoder.cpp - Library for reading moves from a quadrature rotary encoder
  * Created by Pedro Rodrigues (medecau@gmail.com) 9, January of 2010
  * Released into the public domain.
  */
