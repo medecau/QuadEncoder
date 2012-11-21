@@ -2,9 +2,10 @@
  * QuadEncoder.cpp - Library for reading moves from a quadrature rotary encoder
  * Created by Pedro Rodrigues (medecau@gmail.com) 9, January of 2010
  * Released into the public domain.
+ * Updated by Scottapotamas scott@26oclock.com for arduino 1.0 ice
  */
 
-#include "WProgram.h"
+#include "Arduino.h"
 #include "QuadEncoder.h"
 
 QuadEncoder::QuadEncoder(int pin1, int pin2)
