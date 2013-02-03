@@ -27,7 +27,7 @@ QuadEncoder::QuadEncoder(int pin1, int pin2)
 
 }
 
-char QuadEncoder::hb()
+char QuadEncoder::tick()
 {  
   _val1 = digitalRead(_inputPin1);
   _val2 = digitalRead(_inputPin2);
@@ -57,6 +57,7 @@ char QuadEncoder::hb()
       else if (_turn == -1 || _turn == 3)
         _turnCount--;
     }
+    
     if (_pos==0){
       if (_turnCount>0){
         _turnCount=0;
@@ -69,12 +70,5 @@ char QuadEncoder::hb()
         return '-';
       }
     }
-    
-    
-    
-    
-    
-    
-    
   }
 }

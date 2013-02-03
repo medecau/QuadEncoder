@@ -15,7 +15,7 @@ class QuadEncoder
 {
   public:
     QuadEncoder(int pin1, int pin2);
-    char hb();
+    char tick();
   private:
     int _inputPin1;
     int _inputPin2;
