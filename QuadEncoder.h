@@ -17,6 +17,7 @@ class QuadEncoder
     QuadEncoder(int pin1, int pin2);
     char tick();
   private:
+	bool _moved;
     int _inputPin1;
     int _inputPin2;
     int _val1;

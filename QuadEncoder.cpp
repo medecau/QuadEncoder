@@ -1,6 +1,7 @@
 /**
  * QuadEncoder.cpp - Library for reading moves from a quadrature rotary encoder
  * Created by Pedro Rodrigues (medecau@gmail.com) 9, January of 2010
+ * Modified by Andreas Lekas (spadusa@gmail.com) 31, January, 2010
  * Released into the public domain.
  * Updated by Scottapotamas scott@26oclock.com for arduino 1.0 ice
  */
@@ -24,11 +25,11 @@ QuadEncoder::QuadEncoder(int pin1, int pin2)
   _oldPos=0;
   _turn=0;
   _turnCount=0;
-
 }
 
 char QuadEncoder::tick()
 {  
+  _moved = false;
   _val1 = digitalRead(_inputPin1);
   _val2 = digitalRead(_inputPin2);
     // Detect changes
@@ -61,11 +62,14 @@ char QuadEncoder::tick()
     if (_pos==0){
       if (_turnCount>0){
         _turnCount=0;
+		_moved = true;
         return '>';
       } else if (_turnCount<0){
+		_moved = true;
         _turnCount=0;
         return '<';
       } else {
+		_moved = false;
         _turnCount=0;
         return '-';
       }
