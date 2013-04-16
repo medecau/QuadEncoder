@@ -21,7 +21,7 @@ void setup() {
 }
 
 void loop() {
-  qe1Move=qe.hb();
+  qe1Move=qe.tick();
   if (qe1Move=='>')
     Serial.print(char(qe1Move));
   else if (qe1Move=='<')
